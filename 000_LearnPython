@@ -1,0 +1,310 @@
+#---|---|---|---|------------------------------------------------------|------|
+#   0.0 - Module Imports (0:02:37)
+#   https://docs.python.org/3/py-modindex.html
+#---|---|---|---|------------------------------------------------------|------|
+
+# Rational numbers.
+# https://docs.python.org/3/library/fractions.html#module-fractions
+import fractions
+
+# Miscellaneous operating system interfaces.
+# https://docs.python.org/3/library/os.html#module-os
+import os
+
+# Generate pseudo-random numbers with various common distributions.
+# https://docs.python.org/3/library/random.html#module-random
+import random
+
+# Access system-specific parameters and functions.
+# https://docs.python.org/3/library/sys.html#module-sys
+import sys
+
+# Text wrapping and filling
+# https://docs.python.org/3/library/textwrap.html#module-textwrap
+import textwrap
+
+
+
+# Sections and timestamps correlated to 'Python Programming' by Derek Banas
+# https://www.youtube.com/watch?v=N4mEzFDjqtA&t=1338s
+def main():
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.1 - Hello World (0:02:55)
+    #---|---|---|---|------------------------------------------------------|------|
+    # Desc: Standard test of a print to console
+    print("--- 0.1 - Hello World ---")
+    print("Hello, World!")
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.2 - Comments (0:03:00)
+    #---|---|---|---|------------------------------------------------------|------|
+    print("--- 0.2 - Comments ---")
+    # This is a single-line comment
+    ''' This is a multiline comment '''
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.3 - Variables (0:03:30)
+    #---|---|---|---|------------------------------------------------------|------|
+    # Variable must start with a letter. May contain numbers and underscores
+    # https://google.github.io/styleguide/pyguide.html#Naming
+    # module_name, package_name, ClassName, method_name, ExceptionName, function_name, GLOBAL_CONSTANT_NAME, global_var_name, instance_var_name, function_parameter_name, local_var_name
+    print("--- 0.3 - Variables ---")
+    name = "Teabean"
+    print(name)
+    print("My name is %s" % name)
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.4 - Data Types (0:04:15)
+    #---|---|---|---|------------------------------------------------------|------|
+    print("--- 0.4 - Data Types ---")
+    # Data types built in to the interpreter
+    # https://docs.python.org/3/library/stdtypes.html
+    # Principle types:
+        # Truth Value Testing
+        # Boolean Operations
+        # Comparisons
+        # Numeric Types
+            # Int
+            # Float
+            # Complex
+            # Boolean (int subtype)
+        # Iterator Types
+            # Iterator
+            # Generator
+        # Sequence Types (immutable and mutable)
+            # List
+            # Tuple
+            # Range
+            # String (immutable)
+        # (Functions?)
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+    print("--- 0.5 - Arithmetic Operators ---")
+    # +, - , *, / , %, **, //
+    print("5 +  2 =", (5 + 2))
+    print("5 -  2 =", (5 - 2))
+    print("5 *  2 =", (5 * 2))
+    print("5 /  2 =", (5 / 2))
+    print("5 %  2 =", (5 % 2))
+    print("5 ** 2 =", (5 ** 2))
+    print("5 // 2 =", (5 // 2))
+
+    # Order of operations
+    print(" 1 + 2 - 3  * 2 =", (1 + 2 - 3 * 2))
+    print("(1 + 2 - 3) * 2 = ", ((1 + 2 - 3) * 2))
+    # Use braces whenever possible when dealing with arithmetic
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.6 - Strings (0:06:00)
+    #---|---|---|---|------------------------------------------------------|------|
+    print("--- 0.6 - Strings ---")
+    # Comma-appending - NOTE: Comma adds a whitespace character
+    print("This", "is", "comma", "appending.")
+    print()
+
+    # Escape sequences
+    print("\"This is a quotation!\"\n")
+
+    # Escape sequences
+    quote1 = "To be or not to be, that is the question:"
+    # Multiline quote - NOTE: Adds a newline character, requires dedenting
+    quote2 = '''
+        Whether 'tis nobler in the mind to suffer
+        The slings and arrows of outrageous fortune,
+        Or to take Arms against a Sea of troubles,
+        And by opposing end them.
+        '''
+    # Use of dedenting
+    print("%s" % (quote1), textwrap.dedent("%s%s" % (quote2, "-Hamlet")))
+    print()
+
+    # Print without a newline
+    print("We have ",  end = "")
+    print("only one ", end = "")
+    print("",          end = "line.")
+    print()
+    print()
+
+    # Print multiples
+    print("Some thing! " * 5)
+
+    print()
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.7 - Lists (0:08:15)
+    #---|---|---|---|------------------------------------------------------|------|
+    print("--- 0.7 - Lists ---")
+    print()
+
+    # Generating a list
+    print("List instantiation:")
+    grocery_list = ['Juice', 'Tomatoes', 'Potatoes',
+        'Bananas'] # Showing multi-line list instantiation
+    print()
+
+    # Accessing a list
+    print("List access:")
+    print("Fourth item (index 3) is    :", grocery_list[3], "('Bananas' expected)")
+    print()
+
+    # Modifying a list
+    print("List modification:")
+    grocery_list[3] = "3 tbsp. rhubarb, on fire"
+    print("Fourth item (index 3) is now:", grocery_list[3], "('3 tbsp. rhubarb, on fire' expected)")
+    print()
+
+    # Accessing a range - FROM(Inclusive):TO(Exclusive)
+    print(grocery_list[0:4])
+    print()
+
+    # Lists in lists
+    print("Nested lists:")
+    fish_list = ['One Fish', 'Two Fish', 'Red Fish', 'Blue Fish']
+    meta_list = [grocery_list, fish_list]
+    print(meta_list)
+    print()
+
+    # Accessing nested lists
+    print("Nested list access:")    
+    print(meta_list[0][3])
+    print()
+
+    # List appending
+    print("Appending:")
+    grocery_list.append('Alpha Resins')
+    print("Grocery_List[4]:", grocery_list[4])
+    print()
+
+    # List insertion
+    print("Insertion:")
+    grocery_list.insert(0, "Fish-shaped Crackers")
+    print("Grocery_List[0]:", grocery_list[0])
+    print("Grocery_List[1]:", grocery_list[1])
+    print("Grocery_List[5]:", grocery_list[5])
+    print()
+
+    # List removal
+    print("Removal:")
+    grocery_list.remove('Tomatoes')
+    print(grocery_list)
+    print()
+
+    # List sort
+    print("Sort:")
+    grocery_list.sort()
+    print(grocery_list)
+    print()
+
+    # List reverse-sort
+    print("Reverse Sort:")
+    grocery_list.reverse()
+    print(grocery_list)
+    print()
+
+    # List deletion by index
+    print("Item deletion:")
+    del grocery_list[1]
+    print(grocery_list)
+    print()
+    
+    # List concatenation
+    print("List concatenation:")
+    big_list = grocery_list + fish_list
+    print(big_list)
+    big_list.sort()
+    print(big_list)
+    print()
+
+    # List length
+    print("List length:")
+    print("length ('len()'):", len(big_list), "(number of items)")
+    print()
+
+    # List Max/Min value - NOTE: Independent of sort order
+    print("List min/max:")
+    print("Max value ('max()'):", max(big_list))
+    print("Min value ('min()'):", min(big_list))
+    print()
+
+
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.8 - Tuples (0:12:30)
+    #---|---|---|---|------------------------------------------------------|------|
+    # https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
+    # Like lists, but immutable. Use when
+    print("--- 0.8 - Tuples ---")
+
+    # Generating a tuple
+    print("Tuple instantiation:")
+    tau_tuple = (6, 2, 8, 3, 1, 8)
+    print(tau_tuple)
+    print()
+
+    # Tuple fields
+    print("Tuple length:")
+    print(len(tau_tuple), "(Number of elements)")
+    print("Tuple max element:")
+    print(max(tau_tuple), "(Max element)") # NOTE: Cannot compare between string and int
+    print("Tuple min element:")
+    print(min(tau_tuple), "(Min element)") # NOTE: Cannot compare between string and int
+    print()
+
+    # Conversion to list
+    print("Tuple to list conversion:")
+    # Generate a list by constructor
+    tau_list = list(tau_tuple)
+    print(tau_list)
+    print()
+
+    # Conversion to tuple
+    print("List to tuple conversion:")
+    # Generate a tuple by constructor
+    new_tau_tuple = tuple(tau_list)
+    print(new_tau_tuple)
+    print()
+
+
+    print()
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.5 - Arithmetic Operators (0:04:20)
+    #---|---|---|---|------------------------------------------------------|------|
+
+if __name__ == '__main__':
+    main()
