@@ -30,25 +30,25 @@ import textwrap
 
 def main():
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.1 - Hello World (0:02:55)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.1 - Hello World (0:02:55)
+#---|---|---|---|------------------------------------------------------|------|
     # Desc: Standard test of a print to console
     print("--- 0.1 - Hello World ---")
     print("Hello, World!")
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.2 - Comments (0:03:00)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.2 - Comments (0:03:00)
+#---|---|---|---|------------------------------------------------------|------|
     print("--- 0.2 - Comments ---")
     # This is a single-line comment
     ''' This is a multiline comment '''
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.3 - Variables (0:03:30)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.3 - Variables (0:03:30)
+#---|---|---|---|------------------------------------------------------|------|
     # Variable must start with a letter. May contain numbers and underscores
     # https://google.github.io/styleguide/pyguide.html#Naming
     # module_name, package_name, ClassName, method_name, ExceptionName, function_name, GLOBAL_CONSTANT_NAME, global_var_name, instance_var_name, function_parameter_name, local_var_name
@@ -58,9 +58,9 @@ def main():
     print("My name is %s" % name)
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.4 - Data Types (0:04:15)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.4 - Data Types (0:04:15)
+#---|---|---|---|------------------------------------------------------|------|
     print("--- 0.4 - Data Types ---")
     # Data types built in to the interpreter
     # https://docs.python.org/3/library/stdtypes.html
@@ -84,9 +84,9 @@ def main():
         # (Functions?)
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.5 - Arithmetic Operators (0:04:20)
+#---|---|---|---|------------------------------------------------------|------|
     print("--- 0.5 - Arithmetic Operators ---")
     # +, - , *, / , %, **, //
     print("5 +  2 =", (5 + 2))
@@ -103,9 +103,9 @@ def main():
     # Use braces whenever possible when dealing with arithmetic
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.6 - Strings (0:06:00)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.6 - Strings (0:06:00)
+#---|---|---|---|------------------------------------------------------|------|
     print("--- 0.6 - Strings ---")
     # Comma-appending - NOTE: Comma adds a whitespace character
     print("This", "is", "comma", "appending.")
@@ -139,9 +139,9 @@ def main():
 
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.7 - Lists (0:08:15)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.7 - Lists (0:08:15)
+#---|---|---|---|------------------------------------------------------|------|
     print("--- 0.7 - Lists ---")
     print()
 
@@ -237,9 +237,9 @@ def main():
 
 
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.8 - Tuples (0:12:30)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.8 - Tuples (0:12:30)
+#---|---|---|---|------------------------------------------------------|------|
     # https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences
     # Like lists, but immutable. Use when
     print("--- 0.8 - Tuples ---")
@@ -275,9 +275,9 @@ def main():
 
 
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.9 - Dictionaries / Key:Value pairs (0:13:30)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   0.9 - Dictionaries / Key:Value pairs (0:13:30)
+#---|---|---|---|------------------------------------------------------|------|
     # Like lists, but cannot be concatenated with the (+) operator
     print("--- 0.9 - Dictionaries ---")
     print()
@@ -312,9 +312,9 @@ def main():
 
 
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   1.0 - Conditionals (0:15:45)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   1.0 - Conditionals (0:15:45)
+#---|---|---|---|------------------------------------------------------|------|
     # if, else, elif (==, !=, >, >=, <, <=)
     print("--- 1.0 - Conditionals ---")
     print()
@@ -345,15 +345,15 @@ def main():
         print("Math is broken!")
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   1.1 - Loops (0:43:15)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   1.1 - For Loops (0:43:15)
+#---|---|---|---|------------------------------------------------------|------|
     # 
-    print("--- 1.1 - Loops ---")
+    print("--- 1.1 - For Loops ---")
     print()
 
     # for loops
-    print("For loops:")
+    print("For loops by range:")
     for x in range(0,10): # NOTE: Range is Inclusive:Exclusive
         print(x, ": ", end = "")
     print() # NOTE: Secondary newline required, for loop does not provide one
@@ -366,25 +366,114 @@ def main():
     print() # NOTE: Secondary newline required, for loop does not provide one
     print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
+    # 'for' as an iterator over an un-named list
+    print("Iterating over an un-named list:")
+    for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]:
+        print(x, ": ", end = "")
+    print() # NOTE: Secondary newline required, for loop does not provide one
+    print()
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
+    # 'for' as an iterator over nested lists
+    print("Iterating over lists of lists:")
+    nested_list = [[0, 1, 2], [3, 4, 5, 6], [7, 8, 9, 10, 11]]
+    for sublist in nested_list:
+        for element in sublist:
+            print(element, ": ", end = "")
+    print()    
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
 
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
+#---|---|---|---|------------------------------------------------------|------|
+#   1.2 - While Loops (0:22:10)
+#---|---|---|---|------------------------------------------------------|------|
+    print("--- 1.2 - While Loops ---")
+    print()
+
+    # While loops
+    print("While loops by conditional (looking for 50 in random draw 0-100):")
+    random_number = 0
+    while(random_number != 50):
+        random_number = random.randrange(0, 100) # NOTE: Range is (Inclusive, Exclusive)
+        random_number = random.randint(0,100)    # NOTE: Range is (Inclusive, Inclusive)
+        print(random_number, ": ", end = "")
+    print()
+
+    # 'while' as a prime finder
+    print("While loop as traditional for loop - Finding all primes up to a value X:")
+    curr_value = 1
+    max_value = 100
+    while (curr_value <= max_value):
+        # Check for presence of perfect divisibility 
+        if any((curr_value//i == curr_value/i) for i in range(curr_value//2, 1, -1)):
+            # Do nothing
+            print(end = "")
+        else:
+            print(curr_value, ": ", end = "")
+        # And increment
+        curr_value += 1
+    print()
+
+    # Break and continue
+    print("Looking for a perfect exit at max_value/2:")
+    curr_value = 1
+    max_value = 100
+    while (curr_value <= max_value):
+        if (curr_value/1.0 == max_value/2):
+            print("Match; breaking!", end = "")
+            break # Exits the while loop entirely
+        elif (curr_value % 2 == 0):
+            print("E: ", end = "")
+            curr_value += 1
+            continue # bypass instructions after this elif, return to top of while
+        else:
+            print("O: ", end = "")
+        curr_value += 1 # Only runs if we exit the while loop on the else condition
+    print()
+
+    # Bridging call
+    part2()
+
+#---|---|---|---|------------------------------------------------------|------|
+#   2.0 - Functions (0:25:20)
+#---|---|---|---|------------------------------------------------------|------|
+# Must define function before it is called (see call to main at bottom of script)
+def add(arg1, arg2):
+    sum = arg1 + arg2 # NOTE: Variable defined 'in-scope', cannot be accessed outside
+    return(sum)
+
+def part2():
+    print("--- 2.0 - Function Definitions and Calls ---")
+    print()
+
+    # Call to add function
+    print("Call to add() function:")
+    new_variable = add(5, 6)
+    print("5 + 6 =", new_variable)
+    print("3 + 4 =", add(3, 4))
+    print()
+
+#---|---|---|---|------------------------------------------------------|------|
+#   2.1 - User Inputs (0:26:30)
+#---|---|---|---|------------------------------------------------------|------|
+    print("--- 2.1 - User Inputs ---")
+    print()
+
+    # Simple user inputs
+    print("What is your state?:")
+    state = sys.stdin.readline()
+    print("Your state is:", state)
+
+#---|---|---|---|------------------------------------------------------|------|
+#   3.0 - Strings Redux (0:27:10)
+#---|---|---|---|------------------------------------------------------|------|
+    print("--- 3.0 - Strings Redux ---")
+    print()
+
+    big_string = "abcdefghijklmnopqrstuvwxyz"
+    
+#---|---|---|---|------------------------------------------------------|------|
+#   0.5 - Arithmetic Operators (0:04:20)
+#---|---|---|---|------------------------------------------------------|------|
 
 if __name__ == '__main__':
     main()
