@@ -1,3 +1,6 @@
+# Sections and timestamps correlated to 'Python Programming' by Derek Banas
+# https://www.youtube.com/watch?v=N4mEzFDjqtA&t=1338s
+
 #---|---|---|---|------------------------------------------------------|------|
 #   0.0 - Module Imports (0:02:37)
 #   https://docs.python.org/3/py-modindex.html
@@ -25,8 +28,6 @@ import textwrap
 
 
 
-# Sections and timestamps correlated to 'Python Programming' by Derek Banas
-# https://www.youtube.com/watch?v=N4mEzFDjqtA&t=1338s
 def main():
 
     #---|---|---|---|------------------------------------------------------|------|
@@ -273,18 +274,97 @@ def main():
     print()
 
 
+
+    #---|---|---|---|------------------------------------------------------|------|
+    #   0.9 - Dictionaries / Key:Value pairs (0:13:30)
+    #---|---|---|---|------------------------------------------------------|------|
+    # Like lists, but cannot be concatenated with the (+) operator
+    print("--- 0.9 - Dictionaries ---")
     print()
-    #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
-    #---|---|---|---|------------------------------------------------------|------|
+
+    # Generating a dictionary
+    print("Dictionary instantiation:")
+    some_dictionary = { 'key' : 'value',
+                        'aardvark' : 'A nocturnal, burrowing mammal',
+                        'banana' : 'A long, curved fruit that grows in clusters',
+                        'coven' : 'A group or gathering of very nice people',
+                        'dastardly' : 'See \'Mitch McConnell\'' }
+    # Dictionary length ('len()')
+    print("Dictionary length ('len()'):", len(some_dictionary))
+    print(some_dictionary)
+    print()
+
+    # Accessing a dictionary
+    print("Dictionary access:")
+    print("some_dictionary['dastardly']    :", some_dictionary['dastardly'])
+    print("some_dictionary.get('dastardly'):", some_dictionary.get('dastardly'))
+    # Accessing dictionary keys
+    print(some_dictionary.keys())
+    # Accessing dictionary values
+    print(some_dictionary.values())
+    print()
+
+    # Dictionary deletion
+    print("Dictionary deletion:")
+    del some_dictionary['key']
+    print(some_dictionary)
+    print()
+
+
 
     #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
+    #   1.0 - Conditionals (0:15:45)
     #---|---|---|---|------------------------------------------------------|------|
+    # if, else, elif (==, !=, >, >=, <, <=)
+    print("--- 1.0 - Conditionals ---")
+    print()
+
+    # if, else, elif statements
+    print("If, elif, else conditionals:")
+    # Python 3.x requires an explicit cast to int on input
+    # age = int(input("Age: "))
+    age = 33
+    # NOTE: Python utilizes short-circuiting.
+    # Once a match is made, no further conditions are checked
+    if age > 30:
+        print("Party.")
+    elif age > 21:
+        print("Partaaaaay!")
+    elif age > 16:
+        print("Party!")
+    else:
+        print("...Party...?")
+    print()
+    
+    # Logical operators (and, or, not)
+    cond0 = 0
+    cond1 = 1
+    if ((cond0 == 0) and (cond1 == 1)):
+        print("Math works!")
+    elif ((cond0 != 0) or (cond1 != 1)):
+        print("Math is broken!")
+    print()
 
     #---|---|---|---|------------------------------------------------------|------|
-    #   0.5 - Arithmetic Operators (0:04:20)
+    #   1.1 - Loops (0:43:15)
     #---|---|---|---|------------------------------------------------------|------|
+    # 
+    print("--- 1.1 - Loops ---")
+    print()
+
+    # for loops
+    print("For loops:")
+    for x in range(0,10): # NOTE: Range is Inclusive:Exclusive
+        print(x, ": ", end = "")
+    print() # NOTE: Secondary newline required, for loop does not provide one
+    print()
+
+    # 'for' as an iterator
+    print("Iterating over a list:")
+    for x in big_list: # NOTE: Will capture all elements
+        print(x, ": ", end = "")
+    print() # NOTE: Secondary newline required, for loop does not provide one
+    print()
 
     #---|---|---|---|------------------------------------------------------|------|
     #   0.5 - Arithmetic Operators (0:04:20)
