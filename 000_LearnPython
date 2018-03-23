@@ -38,6 +38,8 @@ def main():
     print("Hello, World!")
     print()
 
+
+
 #---|---|---|---|------------------------------------------------------|------|
 #   0.2 - Comments (0:03:00)
 #---|---|---|---|------------------------------------------------------|------|
@@ -45,6 +47,8 @@ def main():
     # This is a single-line comment
     ''' This is a multiline comment '''
     print()
+
+
 
 #---|---|---|---|------------------------------------------------------|------|
 #   0.3 - Variables (0:03:30)
@@ -57,6 +61,8 @@ def main():
     print(name)
     print("My name is %s" % name)
     print()
+
+
 
 #---|---|---|---|------------------------------------------------------|------|
 #   0.4 - Data Types (0:04:15)
@@ -84,6 +90,8 @@ def main():
         # (Functions?)
     print()
 
+
+
 #---|---|---|---|------------------------------------------------------|------|
 #   0.5 - Arithmetic Operators (0:04:20)
 #---|---|---|---|------------------------------------------------------|------|
@@ -102,6 +110,8 @@ def main():
     print("(1 + 2 - 3) * 2 = ", ((1 + 2 - 3) * 2))
     # Use braces whenever possible when dealing with arithmetic
     print()
+
+
 
 #---|---|---|---|------------------------------------------------------|------|
 #   0.6 - Strings (0:06:00)
@@ -138,6 +148,8 @@ def main():
     print("Some thing! " * 5)
 
     print()
+
+
 
 #---|---|---|---|------------------------------------------------------|------|
 #   0.7 - Lists (0:08:15)
@@ -345,6 +357,8 @@ def main():
         print("Math is broken!")
     print()
 
+
+
 #---|---|---|---|------------------------------------------------------|------|
 #   1.1 - For Loops (0:43:15)
 #---|---|---|---|------------------------------------------------------|------|
@@ -433,6 +447,8 @@ def main():
     # Bridging call
     part2()
 
+
+
 #---|---|---|---|------------------------------------------------------|------|
 #   2.0 - Functions (0:25:20)
 #---|---|---|---|------------------------------------------------------|------|
@@ -452,6 +468,8 @@ def part2():
     print("3 + 4 =", add(3, 4))
     print()
 
+
+
 #---|---|---|---|------------------------------------------------------|------|
 #   2.1 - User Inputs (0:26:30)
 #---|---|---|---|------------------------------------------------------|------|
@@ -460,8 +478,11 @@ def part2():
 
     # Simple user inputs
     print("What is your state?:")
-    state = sys.stdin.readline()
+    # state = sys.stdin.readline()
+    state = 'Washington'
     print("Your state is:", state)
+
+
 
 #---|---|---|---|------------------------------------------------------|------|
 #   3.0 - Strings Redux (0:27:10)
@@ -469,11 +490,176 @@ def part2():
     print("--- 3.0 - Strings Redux ---")
     print()
 
+    # Substrings
+    print("Substrings:")
     big_string = "abcdefghijklmnopqrstuvwxyz"
+    print("[0:13]:", big_string[0:13]) # From index 0 (inclusive) to index 13 (exclusive)
+    print("[-5:]:", big_string[-5:]) # From 5th before the end to the end (inclusive) to end
+    print("[:-5]:", big_string[:-5]) # From beginning to 5th before the end (exclusive)
+    print("[0:7] + concatenate:", big_string[0:7] + ", How I wonder what you are")
+    print()
+
+    # Formatted outputs
+    print("Formatted Outputs:")
+    print("%c is a char, %s is a string, %d is a number, and %.5f is a formatted float" %
+          ('X', 'someString', 10, 1.23))
+    print(".capitalize():", big_string.capitalize())
+    print(".find()      :", big_string.find('m')) # Returns index of found value
+    print(".isalpha()   :", big_string.isalpha()) # Returns True if all characters in the string are alphabets
+    print(".isalnum()   :", big_string.isalnum()) # Returns True if all characters in are alphanumeric
+    print("len()        :", len(big_string)) # Length of the string
+    print(".replace()   :", big_string.replace("mno", "MNO")) # Find-replace
+    print(".strip()     :", big_string.strip()) # Removes whitespace
+    print()
+
+    # Capturing to a list
+    parse_string = "This is a sentence."
+    parse_list = parse_string.split(' ')
+    print(parse_list)
+
+
+
+#---|---|---|---|------------------------------------------------------|------|
+#   4.0 - File Input/Output (0:30:20)
+#---|---|---|---|------------------------------------------------------|------|
+    print("--- 4.0 - File I/O ---")
+    print()
+
+    print("File instantiation:")
+    test_file = open("LearnPython.txt", "wb") # NOTE: Use "ab+" to Read+Append to file
+    print(test_file.mode)
+    print(test_file.name)
+    test_file.write(bytes("This went into the file!\n", 'UTF-8'))
+    test_file.write(bytes("Can you read me now?\n", 'UTF-8'))
+    test_file.close()
+    print()
+
+    print("File open:")
+    test_file = open("LearnPython.txt", "r+")
+    text_in_file = test_file.read()
+    print(text_in_file)
+    test_file.close()
+
+    print("File removal:")
+    os.remove("LearnPython.txt")
+    print()
+
+    part3()
+
+
+#---|---|---|---|------------------------------------------------------|------|
+#   5.0 - Object Orientation (0:32:30)
+#---|---|---|---|------------------------------------------------------|------|
+
+#---|---|---|---|------------------------------------------------------|------|
+#   5.1 - SuperClass definition (0:32:30)
+#---|---|---|---|------------------------------------------------------|------|
+class Animal:
+    # Field definitions within object
+    name = "" # Double underscore ('__') denotes 'private'
+    height = 0
+    weight = 0
+    sound = 0 
+
+    # Function definitions within object
+    def toString(self):
+        return("{} : {} cm : {} lbs : \"{}\"".format(self.name,
+                                                     self.height,
+                                                     self.weight,
+                                                     self.sound))
+
+    # Constructor
+    def __init__(self, name, hgt, wgt, sound):
+        self.name = name
+        self.height = hgt
+        self.weight = wgt
+        self.sound = sound
+
+    # Getters / Setters
+    def get_name(self):
+        return self.name
+
+    def get_height(self):
+        return self.height
+
+    def get_weight(self):
+        return self.weight
+
+    def get_sound(self):
+        return self.sound
     
+    def get_type(self):
+        return("Animal")
+
+    def set_name(self, some_name):
+        self.name = some_name
+
+    def set_height(self, some_hgt):
+        self.height = some_hgt
+
+    def set_weight(self, some_wgt):
+        self.weight = some_wgt
+
+    def set_sound(self, some_sound):
+        self.sound = some_sound
+
+# Inheriting class
 #---|---|---|---|------------------------------------------------------|------|
-#   0.5 - Arithmetic Operators (0:04:20)
+#   5.2 - SubClass definition (0:39:30)
 #---|---|---|---|------------------------------------------------------|------|
+class Dog(Animal): # Class Dog extends/inherits from Class Animal
+    __owner = ""
+
+    def multiple_sounds(self, how_many=None): # Initializes an argument?
+        if how_many is None: # One way to handle method overloading
+            print(self.get_sound)
+        else:
+            print(self.get_sound() * how_many)
+
+    def toString(self):
+        return("{} : {} cm : {} lbs : \"{}\" : {}".format(self.name,
+                                                          self.height,
+                                                          self.weight,
+                                                          self.sound,
+                                                          self.__owner))
+
+    def __init__(self, name, hgt, wgt, sound, owner): # Overwrite
+       #super().__init__(first, last)
+        super().__init__(name, hgt, wgt, sound) # These arguments handled by superclass
+        self.__owner = owner # Added specificity
+
+    def get_owner(self):
+        return self.__owner
+
+    def get_type(self):
+        return("Dog")
+
+    def set_owner(self, some_owner):
+        self.__owner = some_owner
+
+# Bridging call
+def part3():
+    print("--- 5.0 - Object-orientation ---")
+    print()
+
+    cat = Animal('Whiskers', 33, 10, 'Meow')
+    print(cat.toString())
+
+    spot = Dog('Spot', 53, 27, 'Woof!', 'Saaaaage!')
+    print(spot.toString())
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     main()
