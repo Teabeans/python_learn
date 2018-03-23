@@ -614,12 +614,6 @@ class Dog(Animal): # Class Dog extends/inherits from Class Animal
         super().__init__(name, hgt, wgt, sound) # These arguments handled by superclass
         self._owner = owner # Added specificity
 
-    def multiple_sounds(self, how_many=None): # Initializes an argument?
-        if how_many is None: # One way to handle method overloading
-            print(self.get_sound)
-        else:
-            print(self.get_sound() * how_many)
-
     def toString(self):
         return("{} : {} cm : {} lbs : \"{}\" : {}".format(self._name,
                                                           self._height,
@@ -636,6 +630,30 @@ class Dog(Animal): # Class Dog extends/inherits from Class Animal
     def set_owner(self, some_owner):
         self._owner = some_owner
 
+#---|---|---|---|------------------------------------------------------|------|
+#   5.3 - Method overloading (0:39:30)
+#---|---|---|---|------------------------------------------------------|------|
+    def multiple_sounds(self, how_many=None): # Initializes an argument?
+        if how_many is None: # One way to handle method overloading
+            print(self.get_sound(), end = " ")
+        else:
+            print(self.get_sound() * how_many, end = " ")
+        print()
+
+
+
+#---|---|---|---|------------------------------------------------------|------|
+#   5.4 - Polymorphism (0:41:30)
+#---|---|---|---|------------------------------------------------------|------|
+
+class PolyAnimal:
+    def get_type(self, animal):
+        return(animal.get_type())
+        
+    def get_sound(self, animal):
+        return(animal.get_sound())
+
+
 # Bridging call
 def part3():
     print("--- 5.0 - Object-orientation ---")
@@ -646,19 +664,42 @@ def part3():
 
     the_cat = Animal('Whiskers', 33, 10, 'Meow')
     print(the_cat.toString())
+    print()
 
     spot = Dog('Spot', 53, 27, 'Woof!', 'Saaaaage!')
     print(spot.toString())
+    print()
 
+    print("Overloading")
+    print()
 
+    spot.multiple_sounds(5)
+    spot.multiple_sounds(4)
+    spot.multiple_sounds(3)
+    spot.multiple_sounds(2)
+    spot.multiple_sounds()
+    print()
 
+    print("Polymorphism")
+    print()
 
+    the_next_cat = Animal('Mihtehns', 33, 10, 'Meow')
+    rufus = Dog('Rufus', 53, 27, 'Woof!', 'Also Saaaaage!')
+    print(the_next_cat.toString())
+    print(rufus.toString())
+    print()
 
+    test_animal = PolyAnimal()
 
+    print("Type:")
+    print("Cat:", test_animal.get_type(the_next_cat))
+    print("Dog:", test_animal.get_type(rufus))
+    print()
 
-
-
-
+    print("Sound:")
+    print("Cat:", test_animal.get_sound(the_next_cat))
+    print("Dog:", test_animal.get_sound(rufus))
+    print()
 
 
 
